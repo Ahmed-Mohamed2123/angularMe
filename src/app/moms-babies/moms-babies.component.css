@@ -1,0 +1,29 @@
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 200px;
+    transition: all .5s ease-in-out;
+}
+.card-img-top:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.content {
+    overflow: hidden;
+}
+
+.import {
+    margin-top: 5px;
+}
+
+.no {
+    margin-bottom: 27px;
+}
+@media (max-width: 576px) { 
+    .no {
+        margin-bottom: 10px;
+    } 
+}

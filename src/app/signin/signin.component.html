@@ -1,0 +1,24 @@
+
+<div class="container mt-5">
+
+    <h1 class="text-center">Sign In</h1>
+    <div class="content-admin">
+      <p style="margin: 0;">Email Admin:__ ahmedshabana646@gmail.com</p>
+      <p style="margin: 0;">Password:__ 123456</p>
+    </div>
+
+    <form #f="ngForm" (ngSubmit)="signin(f)">
+
+        <div class="alert-icon">
+            <img src="../../assets/mail.png" alt="mail">
+            <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>
+        </div>
+
+        <div class="alert-icon">
+            <img src="../../assets/password.png" alt="password">
+            <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="Password" required>
+        </div>
+        <button class="btn btn-primary" [disabled]="f.invalid">Sign In</button>
+        <div class="alert alert-danger invalid-alert" *ngIf="notUserMessage">Invalid email or password</div>
+    </form>
+</div>

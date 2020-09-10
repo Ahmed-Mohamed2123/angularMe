@@ -1,0 +1,48 @@
+h1 {
+    margin-bottom: 30px;
+    
+}
+.alert-icon-one, .alert-icon-two {
+    width: 49%;
+    display: inline-block;
+}
+@media (max-width: 576px) {
+    .alert-icon-one, .alert-icon-two {
+        width: 100%;
+        display: block;
+    }
+    .alert-icon-two {
+        margin-left: 0;
+    }
+    .alert-icon-one {
+        margin-right: 0;
+    }
+}
+.alert-icon-two {
+    margin-left: 1%;
+}
+.alert-icon-one {
+    margin-right: 1%;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+    padding-left: 40px;
+}
+
+.alert-icon {
+    position: relative;
+}
+.alert-icon img {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+
+.invalid-alert {
+    margin-top: 8px;
+}

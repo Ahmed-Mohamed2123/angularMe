@@ -1,0 +1,14 @@
+.body a {
+    color: rgba(8, 2, 2, 0.644);
+}
+
+.body {
+    margin-bottom: 9px;
+    margin-top: 9px;
+}
+
+@media (max-width: 575.98px) {
+    .body {
+        font-size: 11px;
+    }
+}

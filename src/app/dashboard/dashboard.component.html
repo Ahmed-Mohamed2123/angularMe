@@ -1,0 +1,204 @@
+<div class="container danger-alert" @fadeIn>
+    <span class="btns">
+        <button class="btn btn-primary import" (click)="viewNew()" [class.active]="view === 1">new</button>
+        <button class="btn btn-primary import" (click)="viewGoods()" [class.active]="view === 2">goods</button>
+    </span>
+<!---------------------------------------------------------------------------------------------------->
+<div *ngIf="view == 1" @fadeIn class="margin">
+    <div class="container">
+        <h2 class="text-center">Add New Good</h2>
+        <form #f="ngForm">
+            <input class="one" ngModel name="name" required type="text" class="form-control" placeholder="name">   
+            <input class="one" ngModel name="price" required type="number" class="form-control" placeholder="price">
+            <input class="one" ngModel name="image" required #image type="file">
+            <input class="add" (click)="addNewGoodMom(f)" [disabled]="f.invalid" type="submit" value="Add To Mom" class="btn btn-primary">
+            <input class="add" (click)="addNewGoodMobile(f)" [disabled]="f.invalid" type="submit" value="Add To Mobile" class="btn btn-primary">
+            <input class="add" (click)="addNewGoodToys(f)" [disabled]="f.invalid" type="submit" value="Add To Toys" class="btn btn-primary">
+            <input class="add" (click)="addNewGoodAppliances(f)" [disabled]="f.invalid" type="submit" value="Add To Appliances" class="btn btn-primary">
+            <input class="add" (click)="addNewGoodHealth(f)" [disabled]="f.invalid" type="submit" value="Add To Health" class="btn btn-primary">
+            <input class="add" (click)="addNewGoodElectronics(f)" [disabled]="f.invalid" type="submit" value="Add To Electronics" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+<!--------------------------------------------------------------------------------------------------->
+<div *ngIf="view == 2" class="all" @fadeIn>
+    <div class="container">
+        <div class="content">
+            <div>
+                <h3 class="font-weight-bold ml-3">Appliances ({{ appt.length }})</h3>
+            </div>
+            <table class="table" *ngIf="this.appt.length >= 1">
+                <thead class="thead-dark">
+                    <th>#</th>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Options</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let good of appt; index as i">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{good.name}}</td>
+                        <td>
+                            <input type="number" placeholder="Amount" class="form-control" [(ngModel)]="good.price">
+                        </td>
+                        <td>
+                            <button class="btn btn-primary important" (click)="saveOne(i)">Save</button>
+                            <button class="btn btn-danger" (click)="deleteOne(i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert alert-danger dashboard-alert" *ngIf="this.appt.length === 0">There are no products in this section.</div>
+        </div>
+    </div>
+    <!--------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <div class="content">
+            <div>
+                <h3 class="font-weight-bold ml-3">Electronics ({{ electron.length }})</h3>
+            </div>
+            <table class="table" *ngIf="this.electron.length >= 1">
+                <thead class="thead-dark">
+                    <th>#</th>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Options</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let good of electron; index as i">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{good.name}}</td>
+                        <td>
+                            <input type="number" placeholder="Amount" class="form-control" [(ngModel)]="good.price">
+                        </td>
+                        <td>
+                            <button class="btn btn-primary important" (click)="saveTwo(i)">Save</button>
+                            <button class="btn btn-danger" (click)="deleteTwo(i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert alert-danger dashboard-alert" *ngIf="this.electron.length === 0">There are no products in this section.</div>
+        </div>
+    </div>
+    <!--------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <div class="content">
+            <div>
+                <h3 class="font-weight-bold ml-3">Health ({{ health.length }})</h3>
+            </div>
+            <table class="table" *ngIf="this.health.length >= 1">
+                <thead class="thead-dark">
+                    <th>#</th>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Options</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let good of health; index as i">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{good.name}}</td>
+                        <td>
+                            <input type="number" placeholder="Amount" class="form-control" [(ngModel)]="good.price">
+                        </td>
+                        <td>
+                            <button class="btn btn-primary important" (click)="saveThree(i)">Save</button>
+                            <button class="btn btn-danger" (click)="deleteThree(i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert alert-danger dashboard-alert" *ngIf="this.health.length === 0">There are no products in this section.</div>
+        </div>
+    </div>
+    <!--------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <div class="content">
+            <div>
+                <h3 class="font-weight-bold ml-3">Mobile ({{ mobile.length }})</h3>
+            </div>
+            <table class="table" *ngIf="this.mobile.length >= 1">
+                <thead class="thead-dark">
+                    <th>#</th>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Options</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let good of mobile; index as i">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{good.name}}</td>
+                        <td>
+                            <input type="number" placeholder="Amount" class="form-control" [(ngModel)]="good.price">
+                        </td>
+                        <td>
+                            <button class="btn btn-primary important" (click)="saveFour(i)">Save</button>
+                            <button class="btn btn-danger" (click)="deleteFour(i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert alert-danger dashboard-alert" *ngIf="this.mobile.length === 0">There are no products in this section.</div>
+        </div>
+    </div>
+    <!--------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <div class="content">
+            <div>
+                <h3 class="font-weight-bold ml-3">Moms ({{ mom.length }})</h3>
+            </div>
+            <table class="table" *ngIf="this.mom.length >= 1">
+                <thead class="thead-dark">
+                    <th>#</th>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Options</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let good of mom; index as i">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{good.name}}</td>
+                        <td>
+                            <input type="number" placeholder="Amount" class="form-control" [(ngModel)]="good.price">
+                        </td>
+                        <td>
+                            <button class="btn btn-primary important" (click)="saveFive(i)">Save</button>
+                            <button class="btn btn-danger" (click)="deleteFive(i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert alert-danger dashboard-alert" *ngIf="this.mom.length === 0">There are no products in this section.</div>
+        </div>
+    </div>
+    <!--------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <div class="content">
+        <div>
+            <h3 class="font-weight-bold ml-3">Toys ({{ toy.length }})</h3>
+        </div>
+        <table class="table" *ngIf="this.toy.length >= 1">
+            <thead class="thead-dark">
+                <th>#</th>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Options</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let good of toy; index as i">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{good.name}}</td>
+                    <td>
+                        <input type="number" placeholder="Amount" class="form-control" [(ngModel)]="good.price">
+                    </td>
+                    <td>
+                        <button class="btn btn-primary important" (click)="saveSix(i)">Save</button>
+                        <button class="btn btn-danger" (click)="deleteSix(i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="alert alert-danger dashboard-alert" *ngIf="this.toy.length === 0">There are no products in this section.</div>
+    </div>
+</div>
+</div>

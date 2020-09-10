@@ -1,0 +1,18 @@
+img {
+    height: 82vh;
+    width: 100%;
+}
+
+@media (max-width: 575.98px) {
+    img {
+        height: 75vh;
+    }
+}
+
+::ng-deep .carousel-indicators li {
+    background-color: #f00;
+}
+
+::ng-deep .carousel-control-next-icon, ::ng-deep .carousel-control-prev-icon {
+    background-image: none;
+}

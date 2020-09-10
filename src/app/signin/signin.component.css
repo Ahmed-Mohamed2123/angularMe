@@ -1,0 +1,21 @@
+.form-control {
+    margin-bottom: 15px;
+    padding-left: 40px;
+}
+
+form {
+    margin-top: 30px;
+}
+
+.alert-icon {
+    position: relative;
+}
+.alert-icon img {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+
+.invalid-alert {
+    margin-top: 8px;
+}

@@ -1,0 +1,86 @@
+.content {
+    padding: 11px;
+    margin-bottom: 20px;
+    padding-top: 18px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 48px #f0f0f5;
+    width: 60%;
+}
+@media (max-width: 991.98px) {
+    .content {
+        width: 100%;
+    }
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form .btn {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+form > * {
+    margin-bottom: 10px;
+}
+
+form .one {
+    display: block;
+}
+
+.all {
+    margin-top: 40px;
+}
+
+table {
+    width: 100%;
+    overflow: auto;
+    display: block;
+}
+
+th, td {
+    border: 2px solid #b5b5b5;
+    padding: 8px 15px;
+}
+
+.important {
+    margin-right: 2px;
+}
+@media (max-width: 1199px) {
+    .important {
+        margin-bottom: 2px;
+        margin-right: 2px;
+    }
+}
+
+.table .thead-dark td {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
+}
+
+.danger-alert .top-alert{
+    margin: 8px 0px 0px 3px;
+    padding: 6px 7px;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.btns .active {
+    background-color: rgb(7, 36, 56);
+    color: #ffffff;
+}
+
+.margin {
+    margin-top: 10px;
+}
+
+.import {
+    margin-left: 13px;
+}
+
+.dashboard-alert {
+    margin-top: 27px;
+}

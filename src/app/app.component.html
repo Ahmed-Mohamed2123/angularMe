@@ -1,0 +1,11 @@
+<div>
+  <app-navbar></app-navbar>
+</div>
+
+<div>
+  <app-helper></app-helper>
+</div>
+
+<div class="router-container container" [@animate]="myOutLet.activatedRouteData['index']">
+  <router-outlet #myOutLet="outlet"></router-outlet>
+</div>
